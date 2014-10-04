@@ -3,7 +3,8 @@ f = File.open("./Test_IDF.idf", "r")
 i = 0
 material_line = []
 construction_line = []
-property_list = []
+material_property_list = []
+construction_material_list = []
 space_break = []
 
 f.each_line do |line|
@@ -13,15 +14,18 @@ f.each_line do |line|
     nextLine = f.gets
     while nextLine != "\r\n" do
       if nextLine.index('!')
-        property_list << nextLine[nextLine.index('!')+3..nextLine.length-1]
+        material_property_list << nextLine[nextLine.index('!')+3..nextLine.length-1]
       end
       nextLine = f.gets
-      puts nextLine
     end
   elsif line[0..12] == 'Construction,'
     construction_line << i
-    if line.index('!')
-      property_list << line[line.index('!')+3..line.length-1]
+    nextLine = f.gets
+    while nextLine != "\r\n" do
+      if nextLine.index('!')
+        construction_material_list << nextLine[nextLine.index('!')+3..nextLine.length-1]
+      end
+      nextLine = f.gets
     end
   end
 
@@ -45,8 +49,8 @@ material_line.each do |j|
   puts line[j][2..commaInd]
 end
 
-puts "% -------- Materials -------- %"
-property_list.each do |p|
+puts "% -------- Properties -------- %"
+material_property_list.each do |p|
   puts p
 end
 
