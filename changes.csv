@@ -1,0 +1,5 @@
+construction,material,variable,lower,upper,stepsize
+con1,material1,Thickness,0.5,1.5,.1
+con1,material1,Conductivity,0.1,.2,.01
+con1,material1,Density,500,1000,100
+con1,material1,Specific Heat,1000,2000,100
