@@ -33,6 +33,13 @@ with open('changes.csv') as file:
 
 combinations = list(itertools.product(*seq))
 
+# save output.csv
+with open('output.csv', 'wb') as file:
+    writer = csv.writer(file, delimiter=',')
+    for comb in combinations:
+        writer.writerow(comb)
+
+# run idfBuddy
 for j, comb in enumerate(combinations):
     for i, val in enumerate(comb):
-        print "idfbuddy '" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'"
+        print "idfBuddy '" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'"
