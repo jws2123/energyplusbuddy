@@ -35,9 +35,12 @@ combinations = list(itertools.product(*seq))
 
 # save output.csv
 with open('output.csv', 'wb') as file:
-    writer = csv.writer(file, delimiter=',')
-    for comb in combinations:
-        writer.writerow(comb)
+   	writer = csv.writer(file, delimiter=',')
+	#temp placeholder for header
+    	writer.writerow(['char1', 'char2', 'char3', 'char4'])
+	
+	for comb in combinations:
+       		writer.writerow(comb)
 
 # run idfBuddy
 for j, comb in enumerate(combinations):
