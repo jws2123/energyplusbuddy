@@ -23,7 +23,13 @@ for i in index:
 	tempDf = pd.read_csv(outputFileLocation + "/" + str(i) + ".csv")
 	df = df.append(tempDf.iloc[0])
 
-print df
+df = df.reset_index(int)
+
+output = output.join(df)
+
+output.to_csv("output.csv", sep=",", na_rep="")
+
+#print output
 	
 
 
