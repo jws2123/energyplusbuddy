@@ -1,15 +1,15 @@
 #/bin/sh
 
 echo 'Creating IDF files...'
-python ./../combinations/combinatorics.py
+# python ./../combinations/combinatorics.py
 echo 'DONE'
 
 echo 'Running energy models. This may take a while...'
-idfs = (./../idfs/*)
+idfs=(./idfs/*)
 
 for ((i=0; i<${#idfs[@]}; i++))
 do
-	echo "${idfs[$i]}"
+	echo "energyplus ${idfs[$i]} weatherfile"
 done
 
 echo 'DONE'
