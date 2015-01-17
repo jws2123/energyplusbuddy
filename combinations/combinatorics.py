@@ -41,8 +41,10 @@ with open('output.csv', 'wb') as file:
 	
 	for comb in combinations:
        		writer.writerow(comb)
+            
+print labs
 
 # run idfBuddy
-for j, comb in enumerate(combinations):
-    for i, val in enumerate(comb):
-        print "idfBuddy '" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'"
+# for j, comb in enumerate(combinations):
+#     for i, val in enumerate(comb):
+#         print "idfBuddy '" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'"
