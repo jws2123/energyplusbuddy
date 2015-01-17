@@ -26,24 +26,26 @@ labs = []
 with open('changes.csv') as file:
     reader = csv.DictReader(file, delimiter=',')
     for line in reader:
-        labs.append([line['construction'], line['material'], line['variable']])
+        labs.append([line['material'], line['variable']])
         seq.append(frange(float(line['lower']), float(line['upper']), float(line['stepsize'])))
 
 combinations = list(itertools.product(*seq))
 
 # save output.csv
+header = []            
+for i,h in enumerate(labs):
+    header.append('-'.join(h))
+
 with open('output.csv', 'wb') as file:
    	writer = csv.writer(file, delimiter=',')
 	#temp placeholder for header
-    	writer.writerow(['char1', 'char2', 'char3', 'char4'])
+    	writer.writerow(header)
 	
 	for comb in combinations:
        		writer.writerow(comb)
-            
-print labs
 
 # run idfBuddy
 for j, comb in enumerate(combinations):
     os.system("cp ../main/idfs/template.idf ../main/idfs/" + str(j) + ".idf")
     for i, val in enumerate(comb):
-        print "python ../idfBuddy/idfBuddy.py '" + "../main/idfs/" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'"
+        os.system("python ../idfBuddy/idfBuddy.py '" + "../main/idfs/" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'")
