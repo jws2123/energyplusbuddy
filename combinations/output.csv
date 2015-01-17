@@ -1,4 +1,4 @@
-char1,char2,char3,char4
+material1-Thickness,material1-Conductivity,material1-Density,material1-Specific Heat
 0.5,0.1,500.0,1000.0
 0.5,0.1,500.0,1100.0
 0.5,0.1,500.0,1200.0
