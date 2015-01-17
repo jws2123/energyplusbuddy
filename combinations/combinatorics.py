@@ -1,10 +1,8 @@
 import csv
 import itertools
+import os
 
-## frange () is from 
-def frange(start, end=None, inc=None):  #note: for quantitative variables needs to 
-    "A range function, that does accept float increments..."
-
+def frange(start, end=None, inc=None):
     if end == None:
         end = start + 0.0
         start = 0.0
@@ -45,6 +43,7 @@ with open('output.csv', 'wb') as file:
 print labs
 
 # run idfBuddy
-# for j, comb in enumerate(combinations):
-#     for i, val in enumerate(comb):
-#         print "idfBuddy '" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'"
+for j, comb in enumerate(combinations):
+    os.system("cp ../main/idfs/template.idf ../main/idfs/" + str(j) + ".idf")
+    for i, val in enumerate(comb):
+        print "python ../idfBuddy/idfBuddy.py '" + "../main/idfs/" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'"
