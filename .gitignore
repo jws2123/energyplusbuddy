@@ -1,2 +1,4 @@
 outputBuddy/output/*
 main/idfs/[0-9]*
+main/idfs/Output/*
+main/changes.csv

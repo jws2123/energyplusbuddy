@@ -1,13 +1,13 @@
 import os
 import sys
 import pandas as pd
-import numpy as np
+#import numpy as np
 #import matplotlib.pyplot as plt
 
 
-output = pd.read_csv("../combinations/output.csv")
+output = pd.read_csv("./output.csv")
 
-outputFileLocation = "output"
+outputFileLocation = "./idfs/Output"
 
 count = 0
 for (dirname, dirs, files) in os.walk(outputFileLocation):
@@ -27,7 +27,7 @@ df = df.reset_index(int)
 
 output = output.join(df)
 
-output.to_csv("output.csv", sep=",", na_rep="")
+output.to_csv("results.csv", sep=",", na_rep="")
 
 #print output
 	

@@ -2728,12 +2728,12 @@ Output:Surfaces:List,
 	Details;                 !- Report Type
 
 OutputControl:Table:Style,Comma;
-Output:Variable,*,Zone Ideal Loads Zone Total Cooling Energy, hourly;
-Output:Variable,*,Zone Ideal Loads Zone Total Heating Energy, hourly;
-Output:Variable,*,Zone Packaged Terminal Heat Pump Total Cooling Energy, hourly;
-Output:Variable,*,Zone Packaged Terminal Heat Pump Total Heating Energy, hourly;
-Output:Variable,*,Chiller Electric Energy, hourly;
-Output:Variable,*,Boiler Heating Energy, hourly;
-Output:Variable,*,Fan Electric Energy, hourly;
-Output:Variable,*,Zone Lights Electric Energy, hourly;
-Output:Variable,*,Zone Electric Equipment Electric Energy, hourly;
+Output:Variable,*,Zone Ideal Loads Zone Total Cooling Energy, annual;
+Output:Variable,*,Zone Ideal Loads Zone Total Heating Energy, annual;
+Output:Variable,*,Zone Packaged Terminal Heat Pump Total Cooling Energy, annual;
+Output:Variable,*,Zone Packaged Terminal Heat Pump Total Heating Energy, annual;
+Output:Variable,*,Chiller Electric Energy, annual;
+Output:Variable,*,Boiler Heating Energy, annual;
+Output:Variable,*,Fan Electric Energy, annual;
+Output:Variable,*,Zone Lights Electric Energy, annual;
+Output:Variable,*,Zone Electric Equipment Electric Energy, annual;

@@ -46,6 +46,6 @@ with open('output.csv', 'wb') as file:
 
 # run idfBuddy
 for j, comb in enumerate(combinations):
-    os.system("cp ../main/idfs/template.idf ../main/idfs/" + str(j) + ".idf")
+    os.system("cp ./idfs/template.idf ./idfs/" + str(j) + ".idf")
     for i, val in enumerate(comb):
-        os.system("python ../idfBuddy/idfBuddy.py '" + "../main/idfs/" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'")
+        os.system("python ../idfBuddy/idfBuddy.py '" + "./idfs/" + str(j) + ".idf' " + "'" + "' '".join(labs[i]) + "' " + "'" + str(val) + "'")
