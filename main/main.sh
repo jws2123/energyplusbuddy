@@ -29,16 +29,16 @@ tmux new-window -t $SESSION:1 -n 'Models'  # -t specifies a target, -n names the
 tmux split-window -h #splits the window horizontally 
 tmux select-pane -t 1 #ensures we are selecting pane 1, not 0.  needed?
 tmux split-window -v #splits the window vertically 
-tmux select-pane -t 2 #ensures we are selecting pane 2, not 1.  needed?
+tmux select-pane -t 0 #ensures we are selecting pane 2, not 1.  needed?
 tmux split-window -v
-tmux select-pane -t 1 #needed
-tmux split-window -v
-tmux select-pane -t 0 #needed
-tmux split-window -v
-tmux select-pane -t 5 #needed?
-tmux split-window -v
-tmux select-pane -t 0 #needed
-tmux split-window -v 
+#tmux select-pane -t 1 #needed
+#tmux split-window -v
+#tmux select-pane -t 0 #needed
+#tmux split-window -v
+#tmux select-pane -t 5 #needed?
+#tmux split-window -v
+#tmux select-pane -t 0 #needed
+#tmux split-window -v 
 
 echo 'Done initializing tmux session and setting up windows'
 
@@ -48,20 +48,20 @@ idfs=(./idfs/[0-9]*.idf)
 
 for ((i=0; i<${#idfs[@]}; i++))
 do
-	PANE=$((i%8))
+	PANE=$((i%4))
 	tmux select-pane -t $PANE
 	tmux send-keys "runEP$PANE ${idfs[$i]} USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw" C-m
  
 done
 
 #Set-up an extra window
-tmux new-window -t $SESSION:2 -n 'Play_while_you_work'
-tmux send-keys "echo Energy Models are running in window 1" C-m
+#tmux new-window -t $SESSION:2 -n 'Play_while_you_work'
+#tmux send-keys "echo Energy Models are running in window 1" C-m
 
 echo 'DONE'
 
 #Set default window
-tmux select-window -t $SESSION:2
+tmux select-window -t $SESSION:1
 
 
 #Attach to session
