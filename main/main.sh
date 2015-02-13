@@ -50,7 +50,7 @@ for ((i=0; i<${#idfs[@]}; i++))
 do
 	PANE=$((i%8))
 	tmux select-pane -t $PANE
-	tmux send-keys "runenergyplus ${idfs[$i]} USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw" C-m
+	tmux send-keys "runEP$PANE ${idfs[$i]} USA_NY_New.York-J.F.Kennedy.Intl.AP.744860_TMY3.epw" C-m
  
 done
 
