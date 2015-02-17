@@ -2,3 +2,5 @@ outputBuddy/output/*
 main/idfs/[0-9]*
 main/idfs/Output/*
 main/changes.csv
+main/test.sh
+main/tmux.sh
